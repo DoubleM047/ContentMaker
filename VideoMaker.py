@@ -1,6 +1,6 @@
 from openai import OpenAI
 import requests
-client = OpenAI(api_key = "API_KEY_HERE")
+client = OpenAI(api_key = str(open("API_KEY.txt", "r").read().strip()))
 import urllib.request 
 from PIL import Image
 from pathlib import Path
