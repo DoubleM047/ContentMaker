@@ -24,8 +24,8 @@ from moviepy.audio.fx.all import volumex
 
 # API keys
 
-client = OpenAI(api_key = "OpenAI_API_Key_Here")
-aai.settings.api_key = "aai_API_Key_Here""
+client = OpenAI(api_key = str(open("OPENAI_KEY.txt", "r").read().strip()))
+aai.settings.api_key = str(open("AAI_KEY.txt", "r").read().strip())
 
 # Get the video script
 
