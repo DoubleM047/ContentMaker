@@ -9,9 +9,11 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-3. Insert OpenAI api key into `API_KEY.txt`.
+3. Insert your OpenAI api key into `OPENAI_KEY.txt`.
 
-4. Run `VideoMaker.py`:
+4. Insert your AAI api key into `AAI_KEY.txt`.
+
+5. Run `VideoMaker.py`:
 ```console
 python VideoMaker.py
 ```
