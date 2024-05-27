@@ -32,7 +32,7 @@ aai.settings.api_key = str(open("AAI_KEY.txt", "r").read().strip())
 response = client.chat.completions.create(
   model="gpt-3.5-turbo",
   messages=[
-    {"role": "user", "content": "Can you pretend that you are a youtuber and make a script for a 40 second video that will provide a fun fact for the people watching and only type the spoken text please not the whole script. The fact should be about " + str(input("Fact about:"))},
+    {"role": "user", "content": "Can you pretend that you are a youtuber and make a script for a 40 second video that will provide at least 3 fun facts for the people watching and only type the spoken text please not the whole script. Follow this example: 'Hi guys. did you know theese fun facts about <SubjectMatter>! Fact number one: <Fact1>. Fact number two: <Fact2>. Fact number three: <Fact3>.' The fact should be about " + str(input("Fact about:"))},
   ]
 )
 
@@ -141,9 +141,9 @@ clip = clip.crop(x1=1166.6,y1=0,x2=2246.6,y2=1920)
 
 # Make 3 videos of the pictures made beforehand, then set starting point and duration so that they follow eachother nicely 
 
-title1 = ImageClip("1.png").set_start(0).set_duration((dur)//3).set_pos(("center", "top")).margin(top=150, opacity=0).resize(height=800) # .margin moves them down to their designated position, .resize makes them bigger 
-title2 = ImageClip("2.png").set_start((dur+3)//3+0.5).set_duration((dur)//3).set_pos(("center", "top")).margin(top=150, opacity=0).resize(height=800)
-title3 = ImageClip("3.png").set_start(((dur+3)//3)*2+1).set_duration((dur)//3).set_pos(("center", "top")).margin(top=150, opacity=0).resize(height=800)
+pic1 = ImageClip("1.png").set_start(0).set_duration((dur)//3).set_pos(("center", "top")).margin(top=150, opacity=0).resize(height=800) # .margin moves them down to their designated position, .resize makes them bigger 
+pic2 = ImageClip("2.png").set_start((dur+3)//3).set_duration((dur)//3).set_pos(("center", "top")).margin(top=150, opacity=0).resize(height=800)
+pic3 = ImageClip("3.png").set_start(((dur+3)//3)*2).set_duration((dur)//3).set_pos(("center", "top")).margin(top=150, opacity=0).resize(height=800)
 
 # Making subtitles
 
@@ -152,7 +152,7 @@ sub_clip = SubtitlesClip('subtitles.srt', generator)
 
 # Composition of final video, stick all videos together
 
-final = CompositeVideoClip([clip, sub_clip.margin(top=400, opacity=0), title1, title2, title3])
+final = CompositeVideoClip([clip, sub_clip.margin(top=400, opacity=0), pic1, pic2, pic3])
 
 # Render video and save as output.mp4
 
