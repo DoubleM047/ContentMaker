@@ -1,0 +1,10 @@
+response = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "user", "content": """Can you pretend that you are a youtuber and make a script for a 40 second video that will provide at least 3 fun facts for the people
+      watching and only type the spoken text please not the whole script. Make the facts really drawn out and use complicatd words.
+      Make the text quite long.
+      Follow this example: 'Did you know theese fun facts about <SubjectMatter>! <Fact1>. <Fact2>. <Fact3>. <Fact4>. <Fact-n>' The facts should be about """
+      + str(input("Facts about:"))},
+  ]
+)
