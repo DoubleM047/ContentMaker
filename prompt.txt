@@ -1,3 +1,13 @@
+
+
+tekst1 = "Hey there, fellow space enthusiasts! Today, I'm going to blow your mind with some mind-boggling facts about our incredible universe. Did you know that the Milky Way galaxy is estimated to contain over 100 billion stars, each with its own unique characteristics and history? That's a mind-blowing number to wrap your head around, isn't it? And speaking of mind-blowing, did you know that the largest known galaxy in the universe is IC 1101, which spans a mind-boggling 6 million light-years across? Just imagine the sheer scale and beauty of such a massive cosmic wonder! And last but not least, let's talk about black holes - those mysterious cosmic entities that exert such a powerful gravitational pull that not even light can escape from them. Isn't it fascinating how something so dark and enigmatic can hold such immense power and mystery? So, there you have it, folks - three mind-blowing facts about the vast and wondrous universe we live in. Stay curious and keep exploring the cosmos!"
+#
+
+
+
+
+
+
 response = client.chat.completions.create(
   model="gpt-3.5-turbo",
   messages=[
